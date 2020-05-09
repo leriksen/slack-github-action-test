@@ -12,7 +12,7 @@ jobs:
       with:
         status: success
         fields: repo,commit,author_name,username,text
-        author_name: ${{ github.actor }}
+        author_name: release-bot
         username: username
         text: ${{ github.ref }} released
       env:
