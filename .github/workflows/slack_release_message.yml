@@ -11,7 +11,9 @@ jobs:
       uses: 8398a7/action-slack@v3
       with:
         status: success
-        fields: repo,commit
+        fields: repo,commit,author,message,text
         author: release-bot
+        username: release-bot2
+        text: supplied text
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
