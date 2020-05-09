@@ -1,5 +1,3 @@
-name: send release message to slack
-
 on:
   release:
     types:
@@ -8,12 +6,10 @@ on:
 jobs:
   notify_slack:
     runs-on: ubuntu-latest
-
     steps:
-      - name: notify slack
-      - uses: 8398a7/action-slack@v3
-        with:
-          status: new version of ${{ github.repository }} was released
-          fields: repo,commit,author
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}    
+    - uses: 8398a7/action-slack@v3
+      with:
+        status: new version of ${{ github.repository }} was released
+        fields: repo,commit,author
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
