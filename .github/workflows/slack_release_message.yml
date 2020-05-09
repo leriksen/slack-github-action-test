@@ -7,9 +7,10 @@ jobs:
   notify_slack:
     runs-on: ubuntu-latest
     steps:
-    - uses: 8398a7/action-slack@v3
-      with:
-        status: success
-        fields: repo,commit,author
-      env:
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      - name: Slack notify
+      - uses: 8398a7/action-slack@v3
+        with:
+          status: success
+          fields: repo,commit,author
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
