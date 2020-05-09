@@ -14,6 +14,6 @@ jobs:
         fields: repo,commit,author,message,text
         author: release-bot
         username: release-bot2
-        text: $GITHUB_REF released
+        text: ${{ github.ref }} released
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
